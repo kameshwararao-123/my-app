@@ -1,27 +1,34 @@
 import React from 'react'
 import dbconnection from '../app/utils/config/db';
-import {auth} from './auth';
+import { auth } from './auth';
 import { redirect } from 'next/navigation';
 import Navbar from './components/Navbar';
 import AdminPage from '../app/admin/page';
 import ProductCollections from './components/ProductCollections'
-const HomePage =async() => {
-  const session =await auth();
-  if(!session){
-    redirect('/login');
+const HomePage = async () => {
+  const session = await auth();
+
+  if (!session?.user) {
+    redirect("/login");
   }
-  const username=session.user.name;
+
+  const user = session.user;
+
   return (
     <div>
-      {session.user.role==='user'&&(
-      <>
-        <Navbar username={username} userId={session.user.id}/>
-        <ProductCollections/>
-      </>
+      {user.role === "user" && (
+        <>
+          <Navbar username={user.name} userId={user.id} />
+          <ProductCollections />
+        </>
       )}
-      {session.user.role==='admin'&&<AdminPage/>}
+
+      {user.role === "admin" && <AdminPage />}
     </div>
-  )
-}
+  );
+
+
+};
+
 
 export default HomePage
