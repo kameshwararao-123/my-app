@@ -10,7 +10,7 @@ const Navbar = ({username,userId}) => {
         <p>Call now :</p>
         <p>123-456-789</p>
       </div>
-      <Link href={`/orders/${userId}`}><p style={{color:"white"}}>Bookings</p></Link>
+      <Link href={`https://resort-booking-beige.vercel.app/orders/${userId}`}><p style={{color:"white"}}>Bookings</p></Link>
       <div className='arrange'>
         <p>Welcome :</p>
         <p>{username}</p>
