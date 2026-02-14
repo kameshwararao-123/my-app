@@ -6,7 +6,7 @@ import Link from 'next/link';
 const ProductCollections = () => {
     const [allproducts,setallproducts]=useState([]);
     const productdata=async()=>{
-        const response=await fetch("http://localhost:3000/api/admin/add-product");
+        const response=await fetch("https://resort-booking-beige.vercel.app/api/admin/add-product");
         const result=await response.json();
         setallproducts(result.data);
         console.log(result);

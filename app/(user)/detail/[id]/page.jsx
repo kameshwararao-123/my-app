@@ -11,7 +11,7 @@ const AboutPouduct = () => {
   const params = useParams();
   const { id } = params;
   const fetchdata = async () => {
-    const res = await fetch(`http://localhost:3000/api/admin/product/${id}`);
+    const res = await fetch(`https://resort-booking-beige.vercel.app/api/admin/product/${id}`);
     const result = await res.json();
     console.log(result.data);
     if (result.success) {
