@@ -9,7 +9,7 @@ const BookingsPage = () => {
 
     const fetchdata = async () => {
         try {
-            const res = await fetch(`/api/users/${id}`);
+            const res = await fetch(`https://resort-booking-beige.vercel.app/api/users/${id}`);
             const result = await res.json();
 
             if (result.success && result.user) {
