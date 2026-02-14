@@ -1,15 +1,8 @@
 "use client"
 import Link from 'next/link'
 import React from 'react'
-import {orderAction} from '../ServerActions/orderAcion';
 const Navbar = ({username,userId}) => {
-  const bookinghandler=async()=>{
-    try {
-      await orderAction();
-    } catch (error) {
-      
-    }
-  }
+
   return (
     <div className='navcontainer'>
       <h3>Holiday Resort</h3>

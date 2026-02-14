@@ -36,7 +36,7 @@ const BookingsPage = () => {
                 orders.map((item) => (
                     <div key={item._id} className="order-box">
                         <img
-                            src={`http://localhost:3000${item.image}`}
+                            src={`https://resort-booking-beige.vercel.app/${item.image}`}
                             alt={item.productname}
                             className="order-img"
                         />
