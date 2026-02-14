@@ -16,14 +16,11 @@ const HomePage = async () => {
 
   return (
     <div>
-      {user.role === "user" && (
-        <>
+    {user.name==='admin'?(<AdminPage/>):<>
           <Navbar username={user.name} userId={user.id} />
           <ProductCollections />
-        </>
-      )}
-
-      {user.role === "admin" && <AdminPage />}
+        </>}
+        
     </div>
   );
 
